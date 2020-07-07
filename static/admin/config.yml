@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+# npx netlify-cms-proxy-server
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'lp_alpha'
+    label: 'LP: Alpha'
+    folder: 'src/content'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: true
+    fields:
+      - { label: 'slug', name: 'slug', widget: 'string' }
+      # Hero
+      - label: 'Hero'
+        name: 'hero'
+        widget: 'object'
+        collapsed: false
+        fields:
+            - { label: 'H1', name: 'hero_h1', widget: 'string'}
+            - { label: 'Description', name: 'hero_description', widget: 'string'}
+            - { label: 'Has a CTA', name: 'hero_cta', widget: 'boolean', default: true}
+            - label: "Hero Image"
+              name: "hero_image"
+              widget: "image"
+              required: false
+              media_library:
+                config:
+                  multiple: false
+      # Sections
+      - label: 'Sections'
+        name: 'sections'
+        widget: 'list'
+        collapsed: true
+        allow_add: true
+        fields:
+            - { label: 'Title', name: 'title', widget: 'string'}
+            - { label: 'Description', name: 'description', widget: 'string'}
+            - label: 'Link'
+              name: 'section_link'
+              collapsed: false
+              widget: 'object'
+              hint: 'not required'
+              required: false
+              fields:
+                - { label: 'Label', name: 'section_link_label', widget: 'string', required: false}
+                - { label: 'Url', name: 'section_link_url', widget: 'string', required: false}
+            - label: "Section Image"
+              name: "section_image"
+              widget: "image"
+              required: false
+              media_library:
+                config:
+                  multiple: false
