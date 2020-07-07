@@ -20,6 +20,7 @@ collections:
     editor:
       preview: true
     fields:
+      - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'slug', name: 'slug', widget: 'string' }
       # Hero
       - label: 'Hero'
