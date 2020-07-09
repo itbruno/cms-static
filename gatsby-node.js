@@ -1,6 +1,6 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const alphaTemplate = require.resolve(`./src/templates/alpha.js`)
+  const alphaTemplate = require.resolve(`./src/views/templates/alpha.js`)
   const result = await graphql(`
     {
       allMarkdownRemark {
