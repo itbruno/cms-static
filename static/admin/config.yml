@@ -17,6 +17,8 @@ collections:
     media_folder: ''
     public_folder: ''
     path: '{{title}}/index'
+    preview_path: 'src/preview/{{slug}}'
+    show_preview_links: true
     editor:
       preview: true
     fields:
